@@ -2,28 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemySpawn : MonoBehaviour {
-
-
+public class enemySpawn : MonoBehaviour 
+{
     public Rigidbody enemy;
-
     public float delay;
     public bool determineSpawn;
 
-
-    void Start(){
+    void Start()
+    {
         StartCoroutine("DoCheck");
     }
 
-    /* Update is called once per frame
-	void Update () {
-        determineSpawn = randomSpawn();
-        if(determineSpawn == true){
-            yield return new WaitForSeconds(delay);
-            Rigidbody iP = Instantiate(enemy, transform.position, transform.rotation) as Rigidbody;
-        }
-	}
-*/
     IEnumerator DoCheck()
     {
         for (int x = 0;x <20 ;x++ )
@@ -43,20 +32,22 @@ public class enemySpawn : MonoBehaviour {
         int i = ran.Next(0, 3);
         bool temp = false;
 
-        if (i == 0){
+        if (i == 0)
+        {
             temp = true;
         }
-        else if(i == 1){
+        else if(i == 1)
+        {
             temp = false;
         }
-        else if (i == 2){
+        else if (i == 2)
+        {
             temp = true;
         }
-        else if (i == 3){
+        else if (i == 3)
+        {
             temp = false;
         }
-
         return temp;
     }
-
 }

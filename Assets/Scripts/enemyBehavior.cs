@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class enemyBehavior : MonoBehaviour
 {
-
     public float moveForce;
     private Rigidbody rbody;
     public Vector3 moveDir;
@@ -13,23 +12,14 @@ public class enemyBehavior : MonoBehaviour
 
     void Start()
     {
-
         rbody = GetComponent<Rigidbody>();
-        //moveDir = ChooseDirection();
         transform.rotation = Quaternion.LookRotation(moveDir);
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         rbody.velocity = moveDir * moveForce;
-
-
-
-            moveDir = transform.forward;
-            transform.rotation = Quaternion.LookRotation(moveDir);
-
+        moveDir = transform.forward;
+        transform.rotation = Quaternion.LookRotation(moveDir);
     }
 }

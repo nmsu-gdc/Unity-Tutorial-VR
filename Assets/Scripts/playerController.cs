@@ -2,32 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour {
+public class playerController : MonoBehaviour 
+{
 
     Vector2 mouseLook;
     Vector2 smoothV;
-    public float sensitivity = 5.0f;
-    public float smoothing = 2.0f;
-
     GameObject character;
-
-    public Rigidbody projectile;
-    public float projectileSpeed;
-
-    public GameObject emit;
-
-    // Orientation state.
-    Quaternion _initialOrientation;
+    Quaternion _initialOrientation; // Orientation state.
     Vector2 _currentAngles;
-
-    // Cached cursor state.
-    CursorLockMode _previousLockState;
+    CursorLockMode _previousLockState; // Cached cursor state.
     bool _wasCursorVisible;
 
-
-
-
-    // Use this for initialization
+    public float sensitivity = 5.0f;
+    public float smoothing = 2.0f;
+    public float projectileSpeed;
+    public GameObject emit;
+    public Rigidbody projectile;
+    
     void Start()
     {
         character = this.transform.parent.gameObject;
@@ -46,7 +37,6 @@ public class playerController : MonoBehaviour {
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxis("Mouse Y"));
