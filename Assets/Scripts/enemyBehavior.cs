@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class enemyBehavior : MonoBehaviour
 {
+    public float maxDistFromWall;
     public float moveForce;
-    private Rigidbody rbody;
     public Vector3 moveDir;
     public LayerMask whatIsWall;
-    public float maxDistFromWall;
+
+    private Rigidbody rbody;
 
     void Start()
     {
